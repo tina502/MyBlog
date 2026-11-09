@@ -6,14 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BlogController {
 
-    @GetMapping("/hello")
-    public String hello() {
-        return "你好，我是杨雅婷";
-    }
-
     @GetMapping("/me")
-    public String me() {
-        return "我是杨雅婷，喜欢唱歌跳舞，你呢";
+    public BlogProfile me(){
+        return new BlogProfile ("我的博客","杨雅婷", "welcome to my blog");
     }
-
 }
+
