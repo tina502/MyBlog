@@ -8,7 +8,7 @@ public class BlogController {
 
     @GetMapping("/me")
     public BlogProfile me(){
-        return new BlogProfile ("我的博客","杨雅婷", "welcome to my blog");
+        return new BlogProfile("我的博客","杨雅婷","欢迎来到我的博客");
     }
 }
 

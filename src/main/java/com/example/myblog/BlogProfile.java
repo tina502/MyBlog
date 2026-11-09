@@ -1,19 +1,19 @@
 package com.example.myblog;
 
 public class BlogProfile {
-    private String name;
+    private String blogName;
     private String owner;
     private String message;
 
     //构造方法
-    public BlogProfile(String name, String owner, String message) {
-        this.name = name;
+    public BlogProfile(String blogName, String owner, String message) {
+        this.blogName = blogName;
         this.owner = owner;
         this.message = message;
     }
 
-    public String getName() {
-        return name;
+    public String getBlogName() {
+        return blogName;
     }
     public String getOwner() {
         return owner;
