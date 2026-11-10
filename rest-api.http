@@ -1,0 +1,104 @@
+### MyBlog Lab05–08 验证请求（IDEA HTTP Client 可直接运行）
+### 用法：打开本文件，逐条点击请求行左侧的 ▶ 运行；应用需先启动（MySQL 已就绪）
+
+### Week04 老接口：POST 一条留言
+POST http://localhost:8080/messages
+Content-Type: application/json
+
+{
+  "content": "第一条消息"
+}
+
+###
+
+POST http://localhost:8080/messages
+Content-Type: application/json
+
+{
+  "content": "第二条消息"
+}
+
+###
+
+### Week04 老接口：全部留言（保持返回数组的老行为）
+GET http://localhost:8080/messages
+
+###
+
+### Week04 老接口：单条
+GET http://localhost:8080/messages/1
+
+###
+
+### Week03 身份（Lab08 连续性对照用）
+GET http://localhost:8080/profile
+
+###
+
+### Week07：关键词命中（分页）
+GET http://localhost:8080/messages?keyword=Spring&page=1&size=2
+
+###
+
+### Week07：关键词 + 翻页（过滤条件不丢失）
+GET http://localhost:8080/messages?keyword=Spring&page=2&size=2
+
+###
+
+### Week07：诚实落空（items=[]、total=0、不报错）
+GET http://localhost:8080/messages?keyword=区块链&page=1&size=10
+
+###
+
+### Week07：纯分页切片
+GET http://localhost:8080/messages?page=1&size=5
+
+###
+
+GET http://localhost:8080/messages?page=2&size=5
+
+###
+
+GET http://localhost:8080/messages?page=3&size=5
+
+###
+
+### Week08：发布文章（返回自增 id）
+POST http://localhost:8080/articles
+Content-Type: application/json
+
+{
+  "title": "Lab08 第一篇文章",
+  "content": "今天把 Article 的发布接口打通了。"
+}
+
+###
+
+### Week08：单篇
+GET http://localhost:8080/articles/1
+
+###
+
+### Week08：修订
+PUT http://localhost:8080/articles/1
+Content-Type: application/json
+
+{
+  "title": "Lab08 第一篇文章（已修订）",
+  "content": "修订后：PUT 改完能立刻回读新内容。"
+}
+
+###
+
+### Week08：删除
+DELETE http://localhost:8080/articles/1
+
+###
+
+### Week08：删除后再取 → 404 JSON（统一契约）
+GET http://localhost:8080/articles/1
+
+###
+
+### Week08：不存在的 id → 404 JSON
+GET http://localhost:8080/articles/999
